@@ -91,8 +91,8 @@ jobs:
           file: ./backend/Dockerfile.prod
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}-backend:latest
-            ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
+            ghcr.io/${{ format('{0}/desafio-devops-backend', github.repository_owner) }}:latest
+            ghcr.io/${{ format('{0}/desafio-devops-backend', github.repository_owner) }}:${{ github.sha }}
 
   # TRILHA FRONTEND
   lint-frontend:
@@ -158,5 +158,5 @@ jobs:
           file: ./frontend/Dockerfile.prod
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}-frontend:latest
-            ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
+            ghcr.io/${{ format('{0}/desafio-devops-frontend', github.repository_owner) }}:latest
+            ghcr.io/${{ format('{0}/desafio-devops-frontend', github.repository_owner) }}:${{ github.sha }}
