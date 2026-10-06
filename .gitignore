@@ -24,3 +24,9 @@ nginx/certs/*.key
 # Sistema Operacional
 .DS_Store
 Thumbs.db
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebaserc
+*-credentials.json
