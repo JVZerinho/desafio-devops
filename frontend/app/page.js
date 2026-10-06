@@ -1,18 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { getDashboardData } from '../lib/firebase';
 
 export default function Home() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Em DEV usa a porta direta 8000; em produção/Nginx usa a rota relativa /api/health/
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-    fetch(`${apiUrl}/api/health/`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Falha ao comunicar com a API');
-        return res.json();
-      })
+    getDashboardData()
       .then((json) => setData(json))
       .catch((err) => setError(err.message));
   }, []);
