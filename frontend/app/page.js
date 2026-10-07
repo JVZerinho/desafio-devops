@@ -26,6 +26,7 @@ export default function Home() {
               <li key={index}>{item}</li>
             ))}
           </ul>
+          <h3>Ola</h3>
         </div>
       )}
     </main>
