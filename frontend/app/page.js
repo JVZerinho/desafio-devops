@@ -24,6 +24,7 @@ export default function Home() {
           <ul>
             {data.items.map((item, index) => (
               <li key={index}>{item}</li>
+      <h3>Ola</h3>
             ))}
           </ul>
         </div>
